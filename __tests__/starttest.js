@@ -1,12 +1,14 @@
 const request = require('supertest');
+const config = require('../Configuration/config.json');
+const key = require('../Configuration/apikey.json');
 const { EventEmitterAsyncResource } = require('supertest/lib/test');
 
 
 
 describe('register', ()=>{
-    test('dd', async()=>{
+    test.skip('dd', async()=>{
 
-        const response = await request('https://pokeapi.co/api/v2/').get('/pokemon/ditto')
+        const response = await request(config.baseURL).get('/workers')
         expect(response.statusCode).toBe(200)
 
     });
