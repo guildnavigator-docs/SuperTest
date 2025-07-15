@@ -1,0 +1,16 @@
+{
+  "Id": "7a021f75-cfa7-4e0f-9a6a-98ab5a58bb71",
+  "CreatedOn": "2025-05-26T21:57:35.09+00:00",
+  "LastModifiedOn": "2025-05-28T21:22:59.517+00:00",
+  "CreatedBy": "0ed9c1bb-1c3e-4929-a18d-891309dcf048",
+  "LastModifiedBy": "0ed9c1bb-1c3e-4929-a18d-891309dcf048",
+  "IsDeleted": false,
+  "Name": "FOR API TESTING - LOCATION",
+  "Description": "FOR API TESTING - DESCRIPTION",
+  "Address": "FOR API TESTING - ADDRESS",
+  "StartDate": "2020-01-01T00:00:00+00:00",
+  "EndDate": "2020-12-31T00:00:00+00:00",
+  "CreatingCompanyId": "05e080fb-d67f-4f2e-9b16-d2ee7abea706",
+  "IsArchived": false,
+  "VisibleToAllCompanyEmployees": false
+}

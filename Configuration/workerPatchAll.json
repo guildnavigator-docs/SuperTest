@@ -1,0 +1,18 @@
+{
+  "Id": "47c9b2a0-0e47-46fd-9236-7780a01bf4fc",
+  "FirstName": "PATCH - FIRST NAME",
+  "LastName": "PATCH - LAST NAME",
+  "JobTitle": "PATCH - JOB TITLE",
+  "EmployerId": "05e080fb-d67f-4f2e-9b16-d2ee7abea706",
+  "StreetAddress": "PATCH - STREET ADDRESS",
+  "City": "PATCH - CITY",
+  "PostalCode": "PATCH - POSTAL CODE",
+  "MobileNumber": "111-111-1111",
+  "PhoneNumber": "987-654-3210",
+  "DateHired": "2000-01-01T00:00:00",
+  "EmployeeNumber": "PATCH - EMPLOYEE NUMBER",
+  "EmergencyContact1": "PATCH - EMERGENCY CONTACT 1",
+  "EmergencyContact2": "PATCH - EMERGENCY CONTACT 2",
+  "EmergencyNotes": "PATCH - EMERGENCY NOTES",
+  "Email": "patchedapitesting@email.com"
+}

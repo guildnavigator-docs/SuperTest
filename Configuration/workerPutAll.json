@@ -1,0 +1,18 @@
+{
+  "Id": "47c9b2a0-0e47-46fd-9236-7780a01bf4fc",
+  "FirstName": "PUT - FIRST NAME",
+  "LastName": "PUT - LAST NAME",
+  "JobTitle": "PUT - JOB TITLE",
+  "EmployerId": "05e080fb-d67f-4f2e-9b16-d2ee7abea706",
+  "StreetAddress": "PUT - STREET ADDRESS",
+  "City": "PUT - CITY",
+  "PostalCode": "PUT - POSTAL CODE",
+  "MobileNumber": "111-111-1111",
+  "PhoneNumber": "987-654-3210",
+  "DateHired": "2000-01-01T00:00:00",
+  "EmployeeNumber": "PUT - EMPLOYEE NUMBER",
+  "EmergencyContact1": "PUT - EMERGENCY CONTACT 1",
+  "EmergencyContact2": "PUT - EMERGENCY CONTACT 2",
+  "EmergencyNotes": "PUT - EMERGENCY NOTES",
+  "Email": "putapitesting@email.com"
+}
