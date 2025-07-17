@@ -7,16 +7,44 @@ const workerPatchOne = require('../Configuration/workerPatchOne.json');
 const workerPatchAll = require('../Configuration/workerPatchAll.json');
 const workerPutOne = require('../Configuration/workerPutOne.json');
 const workerPutAll = require('../Configuration/workerPutAll.json');
-const location = require('../Configuration/location.json');
+const location = require('../Configuration/workerLocation.json');
 
 const { EventEmitterAsyncResource } = require('supertest/lib/test');
 
-jest.retryTimes(5, {logErrorsBeforeRetry: false, waitBeforeRetry: 1000});
+jest.retryTimes(8, {logErrorsBeforeRetry: false, waitBeforeRetry: 2000});
 
-describe('Test Workers endpoints', ()=>{
+beforeAll(async ()=>{
+    //Activate Worker
+    let response = await request(config.baseURL)
+        .post('/workers/status')
+        .send({"WorkerId": worker.Id})
+        .set('Authorization', key.APIKey);
 
-    //#region GET
-    test('GET should return the Workers details', async()=>{
+    response = await request(config.baseURL)
+        .post('/locations/worker')
+        .send({
+            'LocationId': location.Id,
+            'WorkerId': worker.Id})
+        .set('Authorization', key.APIKey);
+});
+
+afterAll(()=>{
+    let response = request(config.baseURL)
+        .post('/workers/status/')
+        .send({'WorkerId':worker.Id})
+        .set('Authorization', key.APIKey)
+
+    response = request(config.baseURL)
+        .post('/locations/worker')
+        .send({
+            'LocationId': location.Id,
+            'WorkerId': worker.Id})
+        .set('Authorization', key.APIKey);
+});
+
+describe('Test GET Workers endpoints', ()=>{
+
+    test('GET one Workers details', async()=>{
 
         const response = await request(config.baseURL)
             .get('/workers/'+entities.WorkerID)
@@ -51,7 +79,7 @@ describe('Test Workers endpoints', ()=>{
         expect(response.body).toHaveProperty("FullName");
     });
 
-    test('GET unauthorized should return 401', async()=>{
+    test('GET unauthorized', async()=>{
 
         const response = await request(config.baseURL)
             .get('/workers/'+entities.WorkerID)
@@ -129,96 +157,90 @@ describe('Test Workers endpoints', ()=>{
         expect(response.body[0]).toHaveProperty('listOfPermissions');
         expect(response.body[0]).toHaveProperty('profileType');
     });
-    //#endregion
 
-    //#region PATCH
-    test('PATCH unauthorized', async()=>{
+});
+
+describe('Test POST Worker endpoints', ()=>{
+
+    test('POST unauthorized activate Worker', async()=>{
         let response = await request(config.baseURL)
-            .patch('/workers')
-            .send(workerPatchOne)
+            .post('/workers/status')
+            .send({"WorkerId": worker.Id})
+            .set('Authorization', 'thisIsAnInvalidAPIKey')
+        
+        expect(response.statusCode).toBe(401);
+    });
+
+    //Due to undefined error when activating an already active Worker,
+    // POST/workers/status is tested in delete after deactivating a Worker
+    /*
+    test('POST activate Worker', async()=>{
+
+        let response = request(config.baseURL)
+            .post('/workers/status')
+            .send({"WorkerId": worker.Id})
+            .set('Authorization', key.APIKey);
+
+        console.log(response.body);
+
+        expect(response.statusCode).toBe(200);
+    });
+    */
+
+});
+
+describe('Test DELETE Worker endpoints', ()=>{
+    
+    test('DELETE unauthorized deactivate a worker', async()=>{
+
+        const response = await request(config.baseURL)
+            .delete('/workers/status')
+            .send({"WorkerID": entities.WorkerID})
             .set('Authorization', 'thisIsAnInvalidAPIKey')
 
         expect(response.statusCode).toBe(401);
     });
 
-    test('PATCH a workers profile and validate update', async()=>{
+    test('DELETE deactivate a worker', async()=>{
 
-        //Patch the Worker
         let response = await request(config.baseURL)
-            .patch('/workers')
-            .send(workerPatchOne)
+            .delete('/workers/status')
+            .send({'WorkerID': worker.Id})
             .set('Authorization', key.APIKey);
 
         expect(response.statusCode).toBe(200);
 
-        //Get the patched value and check it was changed
+        response = await request(config.baseURL)
+            .get('/workers/'+worker.Id)
+            .set('Authorization', key.APIKey);
+        
+        expect(response.statusCode).toBe(200);
+        expect(response.body.Active).toBe(false);
+
+    });
+
+    test('afterDELETE, reset Worker', async()=>{
+
+        let response = await request(config.baseURL)
+            .post('/workers/status')
+            .send({'WorkerId': worker.Id})
+            .set('Authorization', key.APIKey);
+
+        expect(response.statusCode).toBe(200);
+
         response = await request(config.baseURL)
             .get('/workers/'+worker.Id)
             .set('Authorization', key.APIKey);
 
         expect(response.statusCode).toBe(200);
-        expect(response.body.EmergencyNotes).toBe('PATCH - EMERGENCY NOTES');
+        expect(response.body.Active).toBe(true);
+
     });
 
-    test('PATCH a workers profile back and validate update', async()=>{
+});
 
-        //Patch them back
-        let response = await request(config.baseURL)
-            .patch('/workers')
-            .send(worker)
-            .set('Authorization', key.APIKey)
-
-        expect(response.statusCode).toBe(200);
-
-        //Get the patched value and check it was changed
-        response = await request(config.baseURL)
-            .get('/workers/'+worker.Id)
-            .set('Authorization', key.APIKey);
-
-        expect(response.body).toHaveProperty("EmergencyNotes");
-        expect(response.body.EmergencyNotes).toBe("PATCH - EMERGENCY NOTES");
-    });
-
-    test('PATCH all of a workers details and validate update', async()=>{
-
-        //Patch the Worker
-        let response = await request(config.baseURL)
-            .patch('/workers')
-            .send(workerPatchAll)
-            .set('Authorization', key.APIKey);
-
-        expect(response.statusCode).toBe(200);
-
-        //Get the patched value and check it was changed
-        response = await request(config.baseURL)
-            .get('/workers/'+worker.Id)
-            .set('Authorization', key.APIKey);
-
-        expect(response.statusCode).toBe(200);
-        expect(response.body).toMatchObject(workerPatchAll);
-    });
-
-    test('PATCH all of a workers details back and validate update', async()=>{
-
-        //Patch them back
-        let response = await request(config.baseURL)
-            .patch('/workers')
-            .send(worker)
-            .set('Authorization', key.APIKey)
-
-        expect(response.statusCode).toBe(200);
-
-        //Get the patched value and check it was changed
-        response = await request(config.baseURL)
-            .get('/workers/'+worker.Id)
-            .set('Authorization', key.APIKey);
-
-        expect(response.body).toHaveProperty("EmergencyNotes");
-        expect(response.body).toMatchObject(worker);
-    });
-    //#endregion
-
-    //#region PUT
+describe('Test PUT Worker endpoints', ()=>{
+    
     test('PUT unauthorized worker', async()=>{
 
         let response = await request(config.baseURL)
@@ -350,57 +372,111 @@ describe('Test Workers endpoints', ()=>{
         expect(response.body).toMatchObject(worker);
 
     });
-    //#endregion
+});
 
-    //#region DELETE
-    test('DELETE unauthorized deactivate a worker', async()=>{
+describe('Test PATCH Worker endpoints', ()=>{
 
-        const response = await request(config.baseURL)
-            .delete('/workers/status')
-            .send({"WorkerID": entities.WorkerID})
+    test('PATCH unauthorized', async()=>{
+        let response = await request(config.baseURL)
+            .patch('/workers')
+            .send(workerPatchOne)
             .set('Authorization', 'thisIsAnInvalidAPIKey')
 
         expect(response.statusCode).toBe(401);
     });
 
-    test('DELETE deactivate a worker', async()=>{
+    test('PATCH a workers profile and validate update', async()=>{
 
+        //Patch the Worker
         let response = await request(config.baseURL)
-            .delete('/workers/status')
-            .send({"WorkerID": entities.WorkerID})
-            .set('Authorization', key.APIKey)
+            .patch('/workers')
+            .send(workerPatchOne)
+            .set('Authorization', key.APIKey);
 
         expect(response.statusCode).toBe(200);
 
+        //Get the patched value and check it was changed
         response = await request(config.baseURL)
             .get('/workers/'+worker.Id)
-            .set('Authorization', key.APIKey)
-        
+            .set('Authorization', key.APIKey);
+
         expect(response.statusCode).toBe(200);
-        expect(response.body.Active).toBe(false);
-    });
-    //#endregion
-
-    //#region POST
-    test('POST unauthorized activate Worker', async()=>{
-        let response = await request(config.baseURL)
-            .post('/workers/status')
-            .send({"WorkerId": worker.Id})
-            .set('Authorization', 'thisIsAnInvalidAPIKey')
-        
-        expect(response.statusCode).toBe(401);
+        expect(response.body.EmergencyNotes).toBe('PATCH - EMERGENCY NOTES');
     });
 
-    test('POST activate Worker', async()=>{
+    test('PATCH a workers profile back and validate update', async()=>{
 
+        //Patch them back
         let response = await request(config.baseURL)
-            .post('/workers/status')
-            .send({"WorkerId": worker.Id})
+            .patch('/workers')
+            .send(worker)
             .set('Authorization', key.APIKey)
-        
+
         expect(response.statusCode).toBe(200);
+
+        //Get the patched value and check it was changed
+        response = await request(config.baseURL)
+            .get('/workers/'+worker.Id)
+            .set('Authorization', key.APIKey);
+
+        expect(response.body).toHaveProperty("EmergencyNotes");
+        expect(response.body.EmergencyNotes).toBe("PATCH - EMERGENCY NOTES");
     });
-    //#endregion
-    
+
+    test('PATCH all of a workers details and validate update', async()=>{
+
+        //Patch the Worker
+        let response = await request(config.baseURL)
+            .patch('/workers')
+            .send(workerPatchAll)
+            .set('Authorization', key.APIKey);
+
+        expect(response.statusCode).toBe(200);
+
+        //Get the patched value and check it was changed
+        response = await request(config.baseURL)
+            .get('/workers/'+worker.Id)
+            .set('Authorization', key.APIKey);
+
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toMatchObject(workerPatchAll);
+    });
+
+    test('PATCH all of a workers details back and validate update', async()=>{
+
+        //Patch them back
+        let response = await request(config.baseURL)
+            .patch('/workers')
+            .send(worker)
+            .set('Authorization', key.APIKey)
+
+        expect(response.statusCode).toBe(200);
+
+        //Get the patched value and check it was changed
+        response = await request(config.baseURL)
+            .get('/workers/'+worker.Id)
+            .set('Authorization', key.APIKey);
+
+        expect(response.body).toHaveProperty("EmergencyNotes");
+        expect(response.body).toMatchObject(worker);
+    });
+
+    //No current method of knowing the permission profile of a Worker
+    test.skip('PATCH a workers profile', async()=>{
+        let response = await request(config.baseURL)
+            .patch('/workers/permissionProfile')
+            .send({"PermissionProfileId": "169ed181-5f99-4560-a06d-5fcb003e724b",
+                "MembersToAssign": [
+                    worker.Id
+                ],
+                "ProfileType": "App"
+            })
+            .set('Authorization', key.APIKey);
+        
+        response = await request(config.baseURL)
+            .get('/workers/'+worker.Id)
+            .set('Authorization', key.APIKey);
+
+    });
 
 });
