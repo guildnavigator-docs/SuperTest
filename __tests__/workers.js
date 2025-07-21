@@ -404,7 +404,7 @@ describe('Test PATCH Worker endpoints', ()=>{
         expect(response.body.EmergencyNotes).toBe('PATCH - EMERGENCY NOTES');
     });
 
-    test('PATCH a workers profile back and validate update', async()=>{
+    test('PATCH a worker back and validate update', async()=>{
 
         //Patch them back
         let response = await request(config.baseURL)
@@ -420,7 +420,7 @@ describe('Test PATCH Worker endpoints', ()=>{
             .set('Authorization', key.APIKey);
 
         expect(response.body).toHaveProperty("EmergencyNotes");
-        expect(response.body.EmergencyNotes).toBe("PATCH - EMERGENCY NOTES");
+        expect(response.body.EmergencyNotes).toBe("FOR API TESTING - EMERGENCY NOTES");
     });
 
     test('PATCH all of a workers details and validate update', async()=>{
