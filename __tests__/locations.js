@@ -3,6 +3,7 @@ const config = require('../Configuration/config.json');
 const key = require('../Configuration/apikey.json');
 const location = require('../Configuration/Locations/location.json');
 const locationPatchOne = require('../Configuration/Locations/locationPatchOne.json');
+const locationPatchAll = require('../Configuration/Locations/locationPatchAll.json');
 const worker = require('../Configuration/worker.json');
 const workerLocation = require('../Configuration/workerLocation.json');
 
@@ -44,6 +45,14 @@ describe('Test GET Location endpoints', ()=>{
 
         expect(response.body).toEqual(expect.any(Array));
     });
+
+    test('GET unauthorized many Locations', async()=>{
+        let response = await request(config.baseURL)
+            .get('/locations')
+            .set('Authorization', 'thisIsAnInvalidAPIKey');
+
+        expect(response.statusCode).toBe(401);
+    });
 });
 
 describe('Test PATCH Location endpoints', ()=>{
@@ -57,7 +66,7 @@ describe('Test PATCH Location endpoints', ()=>{
         expect(response.statusCode).toBe(401);
     });
 
-    test('PATCH a location and validate', async()=>{
+    test('PATCH one value in a location', async()=>{
         let response = await request(config.baseURL)
             .patch('/locations')
             .send(locationPatchOne)
@@ -65,7 +74,13 @@ describe('Test PATCH Location endpoints', ()=>{
 
         expect(response.statusCode).toBe(200);
 
-        response = await request(config.baseURL)
+
+    });
+
+    test('and validate the one result', async()=>{
+        await new Promise(r=>setTimeout(r, 3000));
+
+        let response = await request(config.baseURL)
             .get('/locations/'+location.Id)
             .set('Authorization', key.APIKey);
 
@@ -73,29 +88,70 @@ describe('Test PATCH Location endpoints', ()=>{
         expect(response.body.Description).toBe('PATCH - DESCRIPTION');
     });
 
-    test('PATCH a location back and validate update', async()=>{
-
-        //Patch them back
+    test('PATCH a location back', async()=>{
         let response = await request(config.baseURL)
             .patch('/locations')
             .send(location)
             .set('Authorization', key.APIKey)
 
         expect(response.statusCode).toBe(200);
+    });
 
-        //Get the patched value and check it was changed
-        response = await request(config.baseURL)
+    test('and validate restored value', async ()=>{
+        await new Promise(r=>setTimeout(r, 3000));
+
+        let response = await request(config.baseURL)
             .get('/locations/'+location.Id)
             .set('Authorization', key.APIKey);
 
         expect(response.body).toHaveProperty("Address");
-        expect(response.body.Address).toBe("FOR API TESTING - ADDRESS");
+        expect(response.body.Description).toBe("FOR API TESTING - DESCRIPTION");
+    });
+
+    test('PATCH all values in a location', async()=>{
+        let response = await request(config.baseURL)
+            .patch('/locations')
+            .send(locationPatchAll)
+            .set('Authorization', key.APIKey);
+
+        expect(response.statusCode).toBe(200);
+    });
+
+    test('and validate the patch-all result', async()=>{
+        await new Promise(r=>setTimeout(r, 3000));
+
+        let response = await request(config.baseURL)
+            .get('/locations/'+location.Id)
+            .set('Authorization', key.APIKey);
+
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toMatchObject(locationPatchAll);
+    });
+
+    test('PATCH all of a location back', async()=>{
+        let response = await request(config.baseURL)
+            .patch('/locations')
+            .send(location)
+            .set('Authorization', key.APIKey)
+
+        expect(response.statusCode).toBe(200);
+    });
+
+    test('and validate the restored values', async ()=>{
+        await new Promise(r=>setTimeout(r, 3000));
+
+        let response = await request(config.baseURL)
+            .get('/locations/'+location.Id)
+            .set('Authorization', key.APIKey);
+
+        expect(response.body).toHaveProperty("Address");
+        expect(response.body.Description).toBe("FOR API TESTING - DESCRIPTION");
     });
 });
 
 //PUT is not tested as locations are not deletable and the only PUT is location creation
 
-describe('Test DELETE Location endpoints', ()=>{
+describe('Test DELETE/POST Location endpoints', ()=>{
 
     test('DELETE unauthorized deactivate a Location', async()=>{
         let response = await request(config.baseURL)
@@ -104,7 +160,6 @@ describe('Test DELETE Location endpoints', ()=>{
             .set('Authorization', 'thisIsAnInvalidAPIKey');
         
         expect(response.statusCode).toBe(401);
-
     });
 
     test('DELETE deactivate a Location', async()=>{
@@ -114,16 +169,17 @@ describe('Test DELETE Location endpoints', ()=>{
             .set('Authorization', key.APIKey);
         
         expect(response.statusCode).toBe(200);
-        console.log(response.body)
     });
 
     test('GET check that the Location is archived', async()=>{
+        await new Promise(r=>setTimeout(r, 2000));
+
         let response = await request(config.baseURL)
             .get('/locations/'+location.Id)
             .set('Authorization', key.APIKey);
 
-        expect(response.statusCode).toBe(200);
-        expect(response.body.IsArchived).toBe(true);
+        await expect(response.statusCode).toBe(200);
+        await expect(response.body.IsArchived).toBe(true);
     });
 
     test('POST it back to active', async()=>{
@@ -204,3 +260,4 @@ describe('Test DELETE Location endpoints', ()=>{
         expect(response.body[0]).toHaveProperty('VisibleToAllCompanyEmployees');
     });
 });
+

@@ -1,0 +1,11 @@
+{
+  "Id": "7a021f75-cfa7-4e0f-9a6a-98ab5a58bb71",
+  "Name": "PATCH - LOCATION",
+  "Description": "PATCH - DESCRIPTION",
+  "Address": "PATCH - ADDRESS",
+  "StartDate": "1969-02-03T12:34:56",
+  "EndDate": "1969-02-03T12:34:56",
+  "CreatingCompanyId": "05e080fb-d67f-4f2e-9b16-d2ee7abea706",
+  "IsArchived": false,
+  "CreatedOn": "2025-05-26T21:57:35.09"
+}

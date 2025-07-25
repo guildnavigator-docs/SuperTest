@@ -7,7 +7,7 @@
     "chai": "^5.2.1",
     "mocha": "^11.7.1"
   },
-  "scripts":{
+  "scripts": {
     "test": "jest"
   }
 }

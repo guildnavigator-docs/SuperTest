@@ -1,0 +1,6 @@
+Workers
+The Location profile details returned by GET/workers/{workerId}/locations
+differs from that returned by GET/locations/{locationId}
+Specifically: the time attributes contain '+00:00' in the Workers endpoint
+but omit it in the Locations' endpoints
+
