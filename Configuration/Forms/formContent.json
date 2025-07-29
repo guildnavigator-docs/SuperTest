@@ -1,0 +1,570 @@
+{
+    "ItemIdUsedForCustomLabel": "00000000-0000-0000-0000-000000000000",
+    "UsesCustomLabel": false,
+    "Title": "FOR API TESTING - LABEL",
+    "title": "FOR API TESTING - LABEL",
+    "SignaturesInPdf": 0,
+    "PdfGeneratorVersion": 0,
+    "PdfCacheBuster": "00000000-0000-0000-0000-000000000000",
+    "blobId": null,
+    "Groups": [
+        {
+            "GroupId": "a9e1a1fe-7fab-431a-877f-3d5940346fb4",
+            "Title": "Pass / Fail / NA",
+            "Items": [
+                {
+                    "ItemId": "81a74e40-2633-49c4-b8ff-e63d72182282",
+                    "Content": "Pass / Fail / NA",
+                    "Type": 2,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": "pass",
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": false,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "c09f33e9-128f-492e-a63a-412f6fbcec64",
+            "Title": "Pass / Fail / NA",
+            "Items": [
+                {
+                    "ItemId": "26c1ae03-20f4-4557-bfad-81c156dfaa73",
+                    "Content": "Pass / Fail / NA",
+                    "Type": 2,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": "fail",
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": false,
+            "IsRepeat": true,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "f30c0b36-5c79-4d94-afa0-da2652569bb9",
+            "Title": "Pass / Fail / NA",
+            "Items": [
+                {
+                    "ItemId": "8122265b-eba2-4635-8bfe-ead1dfd88b46",
+                    "Content": "Pass / Fail / NA",
+                    "Type": 2,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": "not_applicable",
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": true,
+            "IsRepeat": true,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "7ac3a3d3-5637-476f-8e2c-0853e160d6e8",
+            "Title": "Check Box",
+            "Items": [
+                {
+                    "ItemId": "0e613015-c23f-47f7-8869-845934fb7797",
+                    "Content": "Check Box",
+                    "Type": 1,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": "true",
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": false,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "e3d06902-7c6c-4c67-9352-8448a82e56f7",
+            "Title": "Check Box",
+            "Items": [
+                {
+                    "ItemId": "578cc106-7913-4dce-9189-b1a2a79404d8",
+                    "Content": "Check Box",
+                    "Type": 1,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": null,
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": true,
+            "IsRepeat": true,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "9771fd85-7fa7-4421-8c94-6f5ebfb03033",
+            "Title": "Short Answer",
+            "Items": [
+                {
+                    "ItemId": "969353dc-2055-4094-87a6-ae7dc8ab3816",
+                    "Content": "Short Answer",
+                    "Type": 6,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": "FOR API TESTING - SHORT ANSWER",
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": true,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "f6531b34-04fd-4b0b-b047-dc1624464914",
+            "Title": "Long Answer",
+            "Items": [
+                {
+                    "ItemId": "85195f13-add8-473c-81a3-46225d60cfb7",
+                    "Content": "Long Answer",
+                    "Type": 3,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": "FOR API TESTING - SHORT ANSWER",
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": false,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "888e843d-fe45-4907-ad11-af518d4163d7",
+            "Title": "Text Info Block",
+            "Items": [
+                {
+                    "ItemId": "1a6f98c5-e18c-424a-8a93-199af71fbaab",
+                    "Content": "Text Info Block",
+                    "Type": 7,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": null,
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": false,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "14209909-8888-4fb4-b9d0-11af542884fc",
+            "Title": "Drop-down List: Select One",
+            "Items": [
+                {
+                    "ItemId": "4f301f69-cd35-4317-aa62-bc4bbcd9bf5c",
+                    "Content": "{\"Label\":\"Drop-down List: Select One\",\"ListId\":\"c4a1bdb4-0c20-4e95-a6dc-23f984e2b79f\"}",
+                    "Type": 9,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": "{\"Id\":\"c4a1bdb4-0c20-4e95-a6dc-23f984e2b79f\",\"PreventOtherSelection\":false,\"Contents\":[{\"id\":\"576df189-6594-4eda-8982-34eb5f02fcc3\",\"title\":\"January 2.0\",\"selected\":false,\"items\":[],\"parent\":null},{\"id\":\"f33fd46b-e1b2-4559-a83e-7498e9ec8428\",\"title\":\"February\",\"selected\":false,\"items\":[],\"parent\":null},{\"id\":\"394df30e-0fd6-495a-8db0-a6b1aa42248f\",\"title\":\"March\",\"selected\":false,\"items\":[],\"parent\":null},{\"id\":\"223f9114-c577-4a25-a976-e3f52ab1b29b\",\"title\":\"April\",\"selected\":false,\"items\":[],\"parent\":null},{\"id\":\"d33db2a9-053e-4d5d-896e-04ac0d148d42\",\"title\":\"May\",\"selected\":false,\"items\":[],\"parent\":null},{\"id\":\"97d0cb5f-ccf9-471d-b699-298d28cad236\",\"title\":\"June\",\"selected\":false,\"items\":[],\"parent\":null},{\"id\":\"8a8aeb3b-4ef6-4005-aec6-a5dc213fd223\",\"title\":\"July\",\"selected\":true,\"items\":[],\"parent\":null},{\"id\":\"6460b79d-1d99-46b1-83eb-2cdba7c96976\",\"title\":\"August\",\"selected\":false,\"items\":[],\"parent\":null},{\"id\":\"ec326a7f-f055-41a8-b7b6-9d6fc31d8ad8\",\"title\":\"September\",\"selected\":false,\"items\":[],\"parent\":null},{\"id\":\"24b54905-4017-4d1a-9222-299e05ea68c4\",\"title\":\"October\",\"selected\":false,\"items\":[],\"parent\":null},{\"id\":\"7d7e3e7c-c806-4b05-b1c4-b86e37c1d125\",\"title\":\"November\",\"selected\":false,\"items\":[],\"parent\":null},{\"id\":\"593bf43f-e747-47af-b4ab-bf11f3623152\",\"title\":\"December\",\"selected\":false,\"items\":[],\"parent\":null},{\"id\":\"2d0b7391-05e5-4a93-a4bd-d860c0a4bd67\",\"title\":\"13th Month\",\"selected\":false,\"items\":[],\"parent\":null},{\"id\":\"00000000-0000-0000-0000-000000000000\",\"title\":\"\",\"selected\":false,\"items\":[],\"parent\":null}]}",
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": false,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "e6c1d5aa-1cb7-4add-9764-ca54ac48dcc3",
+            "Title": "Drop-down List: Select Multiple",
+            "Items": [
+                {
+                    "ItemId": "beb3c3a9-e541-4d02-b6d7-4016d42e0a4a",
+                    "Content": "{\"Label\":\"Drop-down List: Select Multiple\",\"ListId\":\"5c4c5e93-aca5-4795-b1f0-50b6e7a3d668\"}",
+                    "Type": 8,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": "{\"Id\":\"5c4c5e93-aca5-4795-b1f0-50b6e7a3d668\",\"PreventOtherSelection\":false,\"Contents\":[{\"id\":\"231718e0-7460-4d25-abf4-e59f431715f3\",\"title\":\"Examine harness and retractor or rope for fraying and/or cuts (damaged equipment will be removed from service)\",\"selected\":true,\"items\":[],\"parent\":null},{\"id\":\"a7b0823a-c9fe-42ee-8206-e81750fd1637\",\"title\":\"Extend ladder at least 1 meter over the edge\",\"selected\":true,\"items\":[],\"parent\":null},{\"id\":\"53d6285b-f653-4bba-928d-04c3ffa97b01\",\"title\":\"Secure ladder in place at top and bottom if possible\",\"selected\":true,\"items\":[],\"parent\":null},{\"id\":\"063a8120-aedd-440d-9e1b-0256cf338257\",\"title\":\"attach rope to anchor, attach rope grab to rope, attach shock absorbing lanyard to rope grab and other end to dorsal D ring on harness •\\tTo disassemble, reverse assembly procedure\",\"selected\":false,\"items\":[],\"parent\":null},{\"id\":\"68abbb18-6e0b-4897-84e3-c8bb978707e1\",\"title\":\"DO NOT unhook from one anchor until guardrails and control zones are in place.\",\"selected\":false,\"items\":[],\"parent\":null},{\"id\":\"00000000-0000-0000-0000-000000000000\",\"title\":\"\",\"selected\":false,\"items\":[],\"parent\":null}]}",
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": false,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "a62d798e-8b6f-48e1-a29f-1fa72c07fc05",
+            "Title": "Yes/No/NA",
+            "Items": [
+                {
+                    "ItemId": "c8e1602e-6cf0-4e9d-bf74-1daf9bc07a29",
+                    "Content": "Yes/No/NA",
+                    "Type": 18,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": "yes",
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": false,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "1129dfea-8900-4ac1-9831-1d47e619089e",
+            "Title": "Pass/Fail Total",
+            "Items": [
+                {
+                    "ItemId": "b0d6e159-6aa9-4f6f-b1aa-48e75999c548",
+                    "Content": "Pass/Fail Total",
+                    "Type": 19,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": "{\"pass\":1,\"fail\":1}",
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": false,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "8fbf8a50-a565-493c-96c1-cbc9120e62e2",
+            "Title": "Number Only",
+            "Items": [
+                {
+                    "ItemId": "5491a122-245e-4fc2-9b8f-d472ce171d9c",
+                    "Content": "Number Only",
+                    "Type": 16,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": "1",
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": false,
+            "Repeatable": false,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "34b678f7-a8af-46b4-ba99-03f45cb545b8",
+            "Title": "Select Date",
+            "Items": [
+                {
+                    "ItemId": "d3c18158-6d88-48e4-bdd3-ce80fadb0416",
+                    "Content": "Select Date",
+                    "Type": 13,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": "January 1, 2025",
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": false,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "43bae7ed-836d-435e-ba2b-7f92b7e1b3fd",
+            "Title": "Select Time",
+            "Items": [
+                {
+                    "ItemId": "d7555fae-3422-4ba7-81dc-d95357290858",
+                    "Content": "Select Time",
+                    "Type": 14,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": "08:00 am",
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": false,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "f4d7b6b0-7745-4579-ab49-17bf68a28df7",
+            "Title": "Select Worker",
+            "Items": [
+                {
+                    "ItemId": "3512066d-9351-4093-beb9-c27ae275d9d8",
+                    "Content": "Select Worker",
+                    "Type": 12,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": "[{\"Id\":\"47c9b2a0-0e47-46fd-9236-7780a01bf4fc\",\"FirstName\":\"FOR API TESTING - FIRST NAME\",\"LastName\":\"FOR API TESTING - LAST NAME\",\"JobTitle\":null}]",
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": false,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "fb99e9dd-45da-4aac-8025-1f60735f4ea7",
+            "Title": "Select Multiple Workers",
+            "Items": [
+                {
+                    "ItemId": "c079683a-3a4e-4bd4-b07d-f543c1c29a99",
+                    "Content": "Select Multiple Workers",
+                    "Type": 20,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": "[{\"Id\":\"0ed9c1bb-1c3e-4929-a18d-891309dcf048\",\"FirstName\":\"Matthew\",\"LastName\":\"Strauss\",\"JobTitle\":null},{\"Id\":\"47c9b2a0-0e47-46fd-9236-7780a01bf4fc\",\"FirstName\":\"FOR API TESTING - FIRST NAME\",\"LastName\":\"FOR API TESTING - LAST NAME\",\"JobTitle\":null}]",
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": false,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "eef4eb0e-9840-4dc0-8b71-c3eca9f6062b",
+            "Title": "Add GPS Coordinate",
+            "Items": [
+                {
+                    "ItemId": "6dc14bf7-41ec-418b-b537-efcba3abbd1d",
+                    "Content": "Add GPS Coordinate",
+                    "Type": 17,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": "49.1782144, -121.9723264",
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": false,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "28674fc7-1e7c-4d9a-8d7b-2bc1cefd277c",
+            "Title": "View Image",
+            "Items": [
+                {
+                    "ItemId": "671da347-5a7d-4b97-b88e-ccedba640c03",
+                    "Content": "View Image",
+                    "Type": 22,
+                    "FileItemInfo": {
+                        "MimeType": "image/png",
+                        "BlobId": "06557b78-bffd-43e0-98d9-8223b7ad2115"
+                    },
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": null,
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": false,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "06538a4e-463f-4cb7-9511-e945ef610a21",
+            "Title": "View PDF",
+            "Items": [
+                {
+                    "ItemId": "c82e06d9-465c-4980-be8a-26f8be07eedb",
+                    "Content": "View PDF",
+                    "Type": 22,
+                    "FileItemInfo": {
+                        "MimeType": "application/pdf",
+                        "BlobId": "2331f1b7-eee2-4f46-9a7e-5029ddd1deb2"
+                    },
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": null,
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": false,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "c03f18d0-ad80-4d9f-8639-588736734af6",
+            "Title": "Insert PDF's",
+            "Items": [
+                {
+                    "ItemId": "4079b965-0ff6-4fb8-b45e-3937ec583189",
+                    "Content": "Insert PDF's",
+                    "Type": 23,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": "[{\"BlobId\":\"2f6ebc45-0a11-4404-b953-d5fd5f1558d3\",\"File\":{},\"FileName\":\"Untitled document.pdf\",\"Size\":21147,\"Preview\":\"blob:https://app.sitedocs.com/d680c91c-945d-412c-a201-8c06751807d0\",\"MimeType\":\"application/pdf\",\"Type\":\"file\"}]",
+                    "Comments": null,
+                    "Required": false
+                }
+            ],
+            "Collapsible": true,
+            "Repeatable": false,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "82ebf2ce-447a-4cbc-a1b4-a7e238f08fe8",
+            "Title": "Equipment: Select One",
+            "Items": [
+                {
+                    "ItemId": "ffdc5470-b0f8-4e70-bab2-12675fa30c6c",
+                    "Content": "Equipment: Select One",
+                    "Type": 24,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": "[{\"Id\":\"530bbfb8-1095-4019-8cc5-12167c89f967\",\"Name\":\"Testing Equipment One\"}]",
+                    "Comments": [
+                        {
+                            "CommentId": "3f464830-3944-4d3f-829a-0f84fb2a853d",
+                            "Text": "FOR API TESTING - FORM ITEM COMMENT",
+                            "ImageId": "00000000-0000-0000-0000-000000000000",
+                            "IsAnnotatedImage": false
+                        }
+                    ],
+                    "Required": false
+                }
+            ],
+            "Collapsible": false,
+            "Repeatable": false,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        },
+        {
+            "GroupId": "9bd1ec1e-af7b-4d27-a37f-bffa1f5f3fa0",
+            "Title": "Equipment: Select Multiple",
+            "Items": [
+                {
+                    "ItemId": "204bf598-f554-43fc-8dce-8da1ac8970ba",
+                    "Content": "Equipment: Select Multiple",
+                    "Type": 25,
+                    "FileItemInfo": null,
+                    "FollowupRequested": false,
+                    "FollowupDocumentId": "00000000-0000-0000-0000-000000000000",
+                    "FollowupCompleted": false,
+                    "Value": "[{\"Id\":\"530bbfb8-1095-4019-8cc5-12167c89f967\",\"Name\":\"Testing Equipment One\"},{\"Id\":\"ba38b5cd-bcc0-45cc-bf81-1b931ddc4c10\",\"Name\":\"Testing Equipment Two\"}]",
+                    "Comments": [
+                        {
+                            "CommentId": "c9ccf8ac-d4da-448a-9a9a-71a1c11635ab",
+                            "Text": null,
+                            "ImageId": "48bc1fb1-ae88-4970-bca4-f1818c8fbd82",
+                            "IsAnnotatedImage": false
+                        }
+                    ],
+                    "Required": false
+                }
+            ],
+            "Collapsible": false,
+            "Repeatable": false,
+            "IsRepeat": false,
+            "SnapshotId": null,
+            "System": null
+        }
+    ],
+    "ImageId": "15056d84-de87-48cf-9703-fc2720dda994",
+    "Comments": [
+        {
+            "CommentId": "2969df06-f9da-4df5-95d0-e19d97377a95",
+            "Text": null,
+            "ImageId": "bf655514-f74e-4c51-886b-73569dfaea79",
+            "IsAnnotatedImage": false
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "Id": "3d516e58-903a-42c4-9d22-5bc37c5d8417",
+    "Label": "FOR API TESTING - LABEL",
+    "CreatedOn": "2025-07-25T21:30:05.07",
+    "CreatedBy": "0ed9c1bb-1c3e-4929-a18d-891309dcf048",
+    "IsDeleted": false,
+    "DocumentId": "09219679-8e25-43ce-a58a-f1d60282fb6a",
+    "DocumentTemplateVersionId": "c91d3672-780f-44b6-bd6f-9d6ee583e10e",
+    "DocumentTemplateId": "6b3febb6-edcd-4d0e-b7e4-64134965a53a",
+    "HasGoodData": true,
+    "PrecedingVersionId": null,
+    "Due": null,
+    "IsPrivate": false,
+    "CreatingCompanyId": "05e080fb-d67f-4f2e-9b16-d2ee7abea706",
+    "LocationId": "7a021f75-cfa7-4e0f-9a6a-98ab5a58bb71",
+    "DocumentTemplateName": "",
+    "Type": "",
+    "FormScheduleGroupId": null,
+    "ProcessRunId": null,
+    "ProcessDefinitionId": null
+}

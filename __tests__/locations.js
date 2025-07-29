@@ -4,10 +4,10 @@ const key = require('../Configuration/apikey.json');
 const location = require('../Configuration/Locations/location.json');
 const locationPatchOne = require('../Configuration/Locations/locationPatchOne.json');
 const locationPatchAll = require('../Configuration/Locations/locationPatchAll.json');
-const worker = require('../Configuration/worker.json');
-const workerLocation = require('../Configuration/workerLocation.json');
+const worker = require('../Configuration/Workers/worker.json');
+const workerLocation = require('../Configuration/Workers/workerLocation.json');
 
-jest.retryTimes(8, {logErrorsBeforeRetry: false, waitBeforeRetry: 2000});
+jest.retryTimes(8, {logErrorsBeforeRetry: false, waitBeforeRetry: 2000, retryImmediately: true});
 
 describe('Test GET Location endpoints', ()=>{
 
@@ -153,7 +153,7 @@ describe('Test PATCH Location endpoints', ()=>{
 
 describe('Test DELETE/POST Location endpoints', ()=>{
 
-    test('DELETE unauthorized deactivate a Location', async()=>{
+    test('unauthorized deactivate a Location', async()=>{
         let response = await request(config.baseURL)
             .delete('/locations/status')
             .send({'LocationId': location.Id})
@@ -162,7 +162,7 @@ describe('Test DELETE/POST Location endpoints', ()=>{
         expect(response.statusCode).toBe(401);
     });
 
-    test('DELETE deactivate a Location', async()=>{
+    test('deactivate a Location', async()=>{
         let response = await request(config.baseURL)
             .delete('/locations/status')
             .send({'LocationId': location.Id})
@@ -171,7 +171,7 @@ describe('Test DELETE/POST Location endpoints', ()=>{
         expect(response.statusCode).toBe(200);
     });
 
-    test('GET check that the Location is archived', async()=>{
+    test('then check that the Location is archived', async()=>{
         await new Promise(r=>setTimeout(r, 2000));
 
         let response = await request(config.baseURL)
@@ -182,7 +182,7 @@ describe('Test DELETE/POST Location endpoints', ()=>{
         await expect(response.body.IsArchived).toBe(true);
     });
 
-    test('POST it back to active', async()=>{
+    test('Reactivate a Location', async()=>{
         let response = await request(config.baseURL)
             .post('/locations/status')
             .send({'LocationId': location.Id})
@@ -191,7 +191,7 @@ describe('Test DELETE/POST Location endpoints', ()=>{
         expect(response.statusCode).toBe(200);
     });
 
-    test('GET check that the Location is not archived', async()=>{
+    test('and check that the Location is not archived', async()=>{
         let response = await request(config.baseURL)
             .get('/locations/'+location.Id)
             .set('Authorization', key.APIKey);
